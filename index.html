@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="ASCII GOON - ASCII Art Collection">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Rationale" rel="stylesheet">
+    
+    <style>
+        /* Custom styles */
+        .content {color:#000000;background-color:#ffffff;}.border-content {border-color: #8DA6CD !important;}.content a {color: #007bff;}.content a:hover {color: #0056b3;}.breadcrumb a {color: #007bff;}.content pre {color:#000000;}footer .social a {color:#b7b7b7;}.bg-header {background-color:#f3f7ff;}.border-header {border-color: #8DA6CD !important;}
+        
+        /* Center content and add proper spacing */
+        body { padding-top: 60px; }
+        .content { 
+            margin: 0 auto; 
+            max-width: 1200px; 
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .workarea { 
+            padding: 20px !important; 
+        }
+        .asciiarts { 
+            text-align: center; 
+        }
+        .asciiarts pre { 
+            display: inline-block; 
+            text-align: left; 
+            margin: 10px;
+        }
+        
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode .content {
+            background-color: #2d2d2d !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+        
+        body.dark-mode .content a {
+            color: #66b3ff !important;
+        }
+        
+        body.dark-mode .content a:hover {
+            color: #99ccff !important;
+        }
+        
+        body.dark-mode .content pre {
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode .bg-header {
+            background-color: #3d3d3d !important;
+        }
+        
+        body.dark-mode .border-header {
+            border-color: #555555 !important;
+        }
+        
+        body.dark-mode .breadcrumb {
+            background-color: #3d3d3d !important;
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode .text-dark {
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode .border-top {
+            border-color: #555555 !important;
+        }
+        
+        /* Dark mode toggle button styles */
+        #darkModeToggle {
+            border: none;
+            background: none;
+            padding: 0.5rem 1rem;
+        }
+        
+        #darkModeToggle:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+        
+        body.dark-mode #darkModeToggle {
+            color: #ffffff !important;
+        }
+        
+        /* Navbar brand styling */
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        /* ASCII art styling */
+        .ascii-art-header {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            line-height: 1.2;
+            white-space: pre;
+        }
+        
+        @media (max-width: 768px) {
+            .ascii-art-header {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand py-0 text-truncate" href="#">ASCII GOON</a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="navbar-collapse collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button class="nav-link btn btn-link text-light" id="darkModeToggle" onclick="toggleDarkMode()" style="border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; margin-right: 10px;">
+                            🌙 <span class="d-none d-sm-inline">Dark Mode</span>
+                        </button>
+                    </li>
+                    <li class="nav-item dropdown" style="min-width: 50px;">
+                        <a class="nav-link dropdown-toggle pr-1" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">🎨 <span class="d-none d-sm-inline">Color Themes</span></a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#" onclick="setTheme('default')">Default</a>
+                            <a class="dropdown-item" href="#" onclick="setTheme('dark')">Dark</a>
+                            <a class="dropdown-item" href="#" onclick="setTheme('light')">Light</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="workarea">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">ASCII Art</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">ASCII GOON</li>
+                </ol>
+            </nav>
+            
+            <div class="asciiarts">
+                <div class="bg-header border border-header rounded m-0 pb-2">
+                    <pre class="p-0 m-0 text-dark ascii-art-header">                                    
+    _    ____   ____ ___ ___    ____  ___   ___  _   _ 
+   / \  / ___| / ___|_ _|_ _|  / ___|/ _ \ / _ \| \ | |
+  / _ \ \___ \| |    | | | |  | |  _| | | | | | |  \| |
+ / ___ \ ___) | |___ | | | |  | |_| | |_| | |_| | |\  |
+/_/   \_\____/ \____|___|___|  \____|\___/ \___/|_| \_|
+</pre>
+                    <pre class="mt-1 mb-0 text-dark d-none d-sm-block">ASCII Art Collection - Creative Expressions</pre>
+                </div>
+                
+                <div class="mt-4">
+                    <h2>Welcome to ASCII GOON</h2>
+                    <p>Explore our collection of ASCII art and creative expressions.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">ASCII Art Gallery</h5>
+                                    <p class="card-text">Browse through various ASCII art pieces and creative designs.</p>
+                                    <a href="#" class="btn btn-primary">View Gallery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Create Your Own</h5>
+                                    <p class="card-text">Learn how to create your own ASCII art and share it with the community.</p>
+                                    <a href="#" class="btn btn-success">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check for saved dark mode preference - default to dark mode
+            const darkMode = localStorage.getItem('darkMode');
+            if (darkMode !== 'disabled') {
+                document.body.classList.add('dark-mode');
+                updateDarkModeButton(true);
+            }
+        });
+        
+        function toggleDarkMode() {
+            const body = document.body;
+            const isDark = body.classList.contains('dark-mode');
+            
+            if (isDark) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+                updateDarkModeButton(false);
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+                updateDarkModeButton(true);
+            }
+        }
+        
+        function updateDarkModeButton(isDark) {
+            const button = document.getElementById('darkModeToggle');
+            const text = button.querySelector('span');
+            
+            if (isDark) {
+                button.innerHTML = '☀️ <span class="d-none d-sm-inline">Light Mode</span>';
+            } else {
+                button.innerHTML = '🌙 <span class="d-none d-sm-inline">Dark Mode</span>';
+            }
+        }
+        
+        function setTheme(theme) {
+            const body = document.body;
+            body.classList.remove('dark-mode');
+            
+            switch(theme) {
+                case 'dark':
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('darkMode', 'enabled');
+                    updateDarkModeButton(true);
+                    break;
+                case 'light':
+                    localStorage.setItem('darkMode', 'disabled');
+                    updateDarkModeButton(false);
+                    break;
+                default:
+                    localStorage.removeItem('darkMode');
+                    updateDarkModeButton(false);
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
